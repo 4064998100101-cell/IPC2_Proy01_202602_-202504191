@@ -1,12 +1,18 @@
-﻿namespace Proyecto_1;
+﻿using System.ComponentModel;
+namespace Proyecto_1;
 
 class Program
 {
+    static listarobot listarobots=new();
+    
 
     static void Main(string[] args)
     {
-        
-
+        fighter fighter1= new fighter(10);
+        res res1=new res();
+        listarobots.agregarRobot(fighter1);
+        listarobots.agregarRobot(res1);
+        listarobots.mostrarRobot();
        
     }
 }
