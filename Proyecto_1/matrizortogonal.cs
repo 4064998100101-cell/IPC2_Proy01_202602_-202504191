@@ -2,39 +2,34 @@ using System;
 
 namespace Proyecto_1
 {
-    class matrizortogonal
+    public class matrizortogonal
     {
-        // Puntero raíz privado para proteger la estructura interna
+        
         private nodo raiz;
 
-        // Propiedades públicas con setters privados (encapsuladas sin perder compatibilidad)
+        
         public string nombreciudad { get; set; }
         public int totalfilas { get; set; }
         public int totalcolumnas { get; set; }
 
-        // Listas encapsuladas con lectura pública y asignación privada
+        
         public listapuntos ListaEntradas { get; private set; }
-        public listapuntos ListaRobots { get; private set; }
         public listapuntos ListaRecursos { get; private set; }
         public listapuntos ListaCiviles { get; private set; }
         public listapuntos ListaMilitares { get; private set; }
 
-        // Constructor
+       
         public matrizortogonal()
         {
             raiz = new nodo('X', -1, -1);
 
             // Inicialización interna de listas
             ListaEntradas = new listapuntos();
-            ListaRobots = new listapuntos();
             ListaRecursos = new listapuntos();
             ListaCiviles = new listapuntos();
             ListaMilitares = new listapuntos();
         }
 
-        // -------------------------------------------------------------
-        // Métodos Internos / Privados de la Matriz (Encapsulados)
-        // -------------------------------------------------------------
 
         private nodo ObtenerocrearcabeceraFila(int fila)
         {
@@ -140,9 +135,6 @@ namespace Proyecto_1
             actual.abajo = nuevo;
         }
 
-        // -------------------------------------------------------------
-        // Métodos Públicos (Interfaz hacia afuera)
-        // -------------------------------------------------------------
 
         public void insertar(char dato, int fila, int columna)
         {

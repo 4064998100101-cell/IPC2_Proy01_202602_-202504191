@@ -2,7 +2,7 @@ namespace Proyecto_1
 {
     public class fighter: robot
     {
-        public fighter(int capacidadinicial) : base("fighter")
+        public fighter(string nombre, int capacidadinicial) : base(nombre)
         {
             this.Capacidad=capacidadinicial;
 
