@@ -5,10 +5,19 @@ namespace Proyecto_1
     class matrizortogonal
     {
         private nodo raiz;
+        public string nombreciudad{get; set;}
+        public int totalfilas{get; set;}
+        public int totalcolumnas{get; set;}
 
+        public listapuntos ListaEntradas{get; private set;}
+        public listapuntos ListaRobots{get; private set;}
+        public listapuntos ListaRecursos{get; private set;}
+        public listapuntos ListaCiviles{get; private set;}
+        public listapuntos ListaMilitares{get; private set;}
         public matrizortogonal()
         {
-            // CORREGIDO: La raíz debe estar en (-1, -1) para no colisionar con la fila/columna 0
+            
+
             raiz = new nodo('X', -1, -1);
         }
 
