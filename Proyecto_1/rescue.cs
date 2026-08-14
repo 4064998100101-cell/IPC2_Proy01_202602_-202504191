@@ -4,7 +4,7 @@ namespace Proyecto_1
 {
     public class res : robot
     {
-        public res() : base ("res")
+        public res(string nombre) : base (nombre)
         {
             
          this.Capacidad=0;

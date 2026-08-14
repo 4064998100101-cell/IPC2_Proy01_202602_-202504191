@@ -14,7 +14,6 @@ namespace Proyecto_1
 
         
         public listapuntos ListaEntradas { get; private set; }
-        public listapuntos ListaRobots { get; private set; }
         public listapuntos ListaRecursos { get; private set; }
         public listapuntos ListaCiviles { get; private set; }
         public listapuntos ListaMilitares { get; private set; }
@@ -26,7 +25,6 @@ namespace Proyecto_1
 
             // Inicialización interna de listas
             ListaEntradas = new listapuntos();
-            ListaRobots = new listapuntos();
             ListaRecursos = new listapuntos();
             ListaCiviles = new listapuntos();
             ListaMilitares = new listapuntos();
