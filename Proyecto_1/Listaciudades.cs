@@ -18,15 +18,15 @@ namespace Proyecto_1
 
         }
 
-        private nodociudad? cola;
-        private nodociudad? cabeza;
+        private static nodociudad? cola;
+        private static  nodociudad? cabeza;
 
-        public listaciudades()
+        public  listaciudades()
         {
             cabeza=null;
             cola=null;
         }
-       public void agregarcity(ciudad Ciudad)
+       public static void agregarcity(ciudad Ciudad)
         {
             nodociudad nuevonodo=new nodociudad(Ciudad);
 

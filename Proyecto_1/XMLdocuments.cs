@@ -5,7 +5,7 @@ namespace  Proyecto_1
     public class lectorXml
     {
         static listarobot listarobots=new();
-        public static void cargarconfiguracion(string rutaArchivo)
+        public  void cargarconfiguracion(string rutaArchivo)
         {
             try
             {
@@ -29,6 +29,7 @@ namespace  Proyecto_1
                     {
                         Procesarrobot(nodoHijo);
                 }
+            }
             }
             catch (System.Exception)
             {
