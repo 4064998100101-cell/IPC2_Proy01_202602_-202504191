@@ -4,22 +4,37 @@ namespace Proyecto_1
 {
     class matrizortogonal
     {
+        // Puntero raíz privado para proteger la estructura interna
         private nodo raiz;
-        public string nombreciudad{get; set;}
-        public int totalfilas{get; set;}
-        public int totalcolumnas{get; set;}
 
-        public listapuntos ListaEntradas{get; private set;}
-        public listapuntos ListaRobots{get; private set;}
-        public listapuntos ListaRecursos{get; private set;}
-        public listapuntos ListaCiviles{get; private set;}
-        public listapuntos ListaMilitares{get; private set;}
+        // Propiedades públicas con setters privados (encapsuladas sin perder compatibilidad)
+        public string nombreciudad { get; set; }
+        public int totalfilas { get; set; }
+        public int totalcolumnas { get; set; }
+
+        // Listas encapsuladas con lectura pública y asignación privada
+        public listapuntos ListaEntradas { get; private set; }
+        public listapuntos ListaRobots { get; private set; }
+        public listapuntos ListaRecursos { get; private set; }
+        public listapuntos ListaCiviles { get; private set; }
+        public listapuntos ListaMilitares { get; private set; }
+
+        // Constructor
         public matrizortogonal()
         {
-            
-
             raiz = new nodo('X', -1, -1);
+
+            // Inicialización interna de listas
+            ListaEntradas = new listapuntos();
+            ListaRobots = new listapuntos();
+            ListaRecursos = new listapuntos();
+            ListaCiviles = new listapuntos();
+            ListaMilitares = new listapuntos();
         }
+
+        // -------------------------------------------------------------
+        // Métodos Internos / Privados de la Matriz (Encapsulados)
+        // -------------------------------------------------------------
 
         private nodo ObtenerocrearcabeceraFila(int fila)
         {
@@ -62,7 +77,6 @@ namespace Proyecto_1
                 return actual.siguiente;
             }
 
-            // CORREGIDO: Fila = -1, Columna = columna
             nodo nuevaCabecera = new nodo(' ', -1, columna);
             nuevaCabecera.siguiente = actual.siguiente;
             nuevaCabecera.anterior = actual;
@@ -74,16 +88,6 @@ namespace Proyecto_1
 
             actual.siguiente = nuevaCabecera;
             return nuevaCabecera;
-        }
-
-        public void insertar(char dato, int fila, int columna)
-        {
-            nodo cabeceraFila = ObtenerocrearcabeceraFila(fila);
-            nodo cabeceraColumna = ObtenerOcrearCabeceraColumna(columna);
-
-            nodo nuevo = new nodo(dato, fila, columna);
-            InsertarEnfila(nuevo, cabeceraFila);
-            InsertarEnColumna(nuevo, cabeceraColumna);
         }
 
         private void InsertarEnfila(nodo nuevo, nodo cabeceraFila)
@@ -119,7 +123,6 @@ namespace Proyecto_1
                 actual = actual.abajo;
             }
 
-            // CORREGIDO: Actualizar el dato si ya existe el nodo
             if (actual.abajo != null && actual.abajo.fila == nuevo.fila)
             {
                 actual.abajo.dato = nuevo.dato;
@@ -135,6 +138,20 @@ namespace Proyecto_1
             }
 
             actual.abajo = nuevo;
+        }
+
+        // -------------------------------------------------------------
+        // Métodos Públicos (Interfaz hacia afuera)
+        // -------------------------------------------------------------
+
+        public void insertar(char dato, int fila, int columna)
+        {
+            nodo cabeceraFila = ObtenerocrearcabeceraFila(fila);
+            nodo cabeceraColumna = ObtenerOcrearCabeceraColumna(columna);
+
+            nodo nuevo = new nodo(dato, fila, columna);
+            InsertarEnfila(nuevo, cabeceraFila);
+            InsertarEnColumna(nuevo, cabeceraColumna);
         }
 
         public void ImprimirMapa()
