@@ -18,15 +18,15 @@ namespace Proyecto_1
 
         }
 
-        private nodorobot? cola;
-        private nodorobot? cabeza;
+        private static  nodorobot? cola;
+        private static nodorobot? cabeza;
 
         public listarobot()
         {
             cabeza=null;
             cola=null;
         }
-       public void agregarRobot(robot Robot)
+       public static void agregarRobot(robot Robot)
         {
             nodorobot nuevonodo=new nodorobot(Robot);
 
@@ -48,7 +48,7 @@ namespace Proyecto_1
             nodorobot actual=cabeza;
             while (actual != null)
             {
-                 Console.WriteLine($"Robot: {actual.Robot.GetType().Name}, Capacidad: {actual.Robot.Capacidad}");
+                 Console.WriteLine($"Robot: {actual.Robot.Nombre}, Capacidad: {actual.Robot.Capacidad}");
                  actual=actual.siguiente;
             }
         }

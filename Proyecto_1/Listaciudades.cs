@@ -43,16 +43,37 @@ namespace Proyecto_1
 
 
         }
-        public void mostrarciudades()
-        {
-            nodociudad actual=cabeza;
-            while (actual != null)
-            {
-                 Console.WriteLine($"Robot: {actual.Ciudad.GetType().Name}");
-                 actual=actual.siguiente;
-            }
-        }
+       public void mostrarciudades()
+{
+    try
+    {
+        int contador = 1;
+        nodociudad actual = cabeza;
 
+        string formatoColumna = "{0, -12} | {1, -25}";
+
+
+        Console.WriteLine(formatoColumna, "No. ciudad", "Nombre ciudad");
+        Console.WriteLine(new string('-', 40)); 
+
+        while (actual != null)
+        {
+            
+            Console.WriteLine(
+                formatoColumna,
+                contador,
+                actual.Ciudad.Nombreciudad
+            );
+
+            contador++;
+            actual = actual.siguiente;
+        } 
+    }
+    catch (System.Exception ex)
+    {
+        Console.WriteLine($"Error al mostrar datos: {ex.Message}");
+    }
+}
     }
 
 }
