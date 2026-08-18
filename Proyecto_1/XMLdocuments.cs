@@ -84,7 +84,7 @@ namespace  Proyecto_1
                 
                 Console.WriteLine();
                
-                nuevaciudad.MostrarCiudad();
+               
                  listaciudades.agregarcity(nuevaciudad);
                 }
 
@@ -137,7 +137,7 @@ namespace  Proyecto_1
                             Console.WriteLine("Este tipo de robot no existe");
                            }
                     listarobot.agregarRobot(nuevorobot);
-                    Console.WriteLine ("Robot: "+nombrerobot+"|tipo: "+tipoRobot+"| capacidad: "+capacidad);
+                   
                 }
             }
         }
