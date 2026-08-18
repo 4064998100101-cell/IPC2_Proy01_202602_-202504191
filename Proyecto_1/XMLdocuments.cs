@@ -4,7 +4,8 @@ namespace  Proyecto_1
 {
     public class lectorXml
     {
-        static listarobot listarobots=new();
+   
+    
         public  void cargarconfiguracion(string rutaArchivo)
         {
             try
@@ -83,7 +84,7 @@ namespace  Proyecto_1
                 
                 Console.WriteLine();
                
-                nuevaciudad.MostrarCiudad();
+               
                  listaciudades.agregarcity(nuevaciudad);
                 }
 
@@ -135,8 +136,8 @@ namespace  Proyecto_1
                            {
                             Console.WriteLine("Este tipo de robot no existe");
                            }
-                    listarobots.agregarRobot(nuevorobot);
-                    Console.WriteLine ("Robot: "+nombrerobot+"|tipo: "+tipoRobot+"| capacidad: "+capacidad);
+                    listarobot.agregarRobot(nuevorobot);
+                   
                 }
             }
         }
